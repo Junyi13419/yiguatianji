@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html data-page-node-id="eYCsdDMMNkFB6wvfmlXtxQ" lang="zh-CN">
+<head data-page-node-id="hQS5xIQMOvwd9LwafqaVwg">
+<script data-page-node-id="wetni1UWzBwXow5qRo1gpC" src="/page/page_comm/inject.js"></script>
+<meta data-page-node-id="ZxTZuAYUNXDPYcU2rLDksB" charset="UTF-8">
+<meta data-page-node-id="yANmC1PPI5l94tXiVgdTTE" content="width=device-width, initial-scale=1.0" name="viewport">
+<title data-page-node-id="hnnwSuSlEgXKeTS5M32nLJ" data-pnid-children="BFjTEpv1Te0MXXgjySPZ0J">一卦天机 · 八字排盘 · 命运推演</title>
+<meta data-page-node-id="LKl3Lm1b1h7cx458R06ZQp" content="一卦天机——AI 驱动的在线八字排盘与命运推演平台。输入出生信息，秒出四柱命盘、五行强弱、未来五年流年运势，一卦洞见天机。" name="description">
+<link data-page-node-id="jZQU35FCYuUnWVYt8k17nQ" href="css/style.css?v=4" rel="stylesheet">
+</head>
+<body data-page-node-id="rzyOYZYz50ZFv7ka5eEDGb">
+
+<!--pnid:bByL8Pzeii0A7PBI2z5qjM--><!-- 背景层：透视网格地面 + aurora 光斑 + 矩阵数字雨 + 体积雾 + 雨丝 + 全息太极/卦象 + 扫描线 -->
+<div data-page-node-id="mFLmyJOsVP8wDftcHTcbfX" class="cyber-bg">
+  <canvas data-page-node-id="kHVUJu1nPty3Ar4H13CpAv" id="matrixRain"></canvas>
+  <div data-page-node-id="PI4lXgupMglnK4huwLDEAx" class="grid-floor"></div>
+  <div data-page-node-id="NY4NqAATStRfPco5lWWz0j" class="aurora-blob b1"></div>
+  <div data-page-node-id="ig6Fm39BTD2vUSFcyj11nD" class="aurora-blob b2"></div>
+  <div data-page-node-id="cRLaQ3g0HOfq8F0AtPiCyQ" class="aurora-blob b3"></div>
+  <div data-page-node-id="KZ8xNbsqMwSDXh1MWHQ8QG" class="fog-band f1"></div>
+  <div data-page-node-id="OMTxNXxNscSMgcY0FVxlHK" class="fog-band f2"></div>
+  <div data-page-node-id="kFTg5vRvSMCf1Nx5uXvcjw" class="rain-layer"></div>
+  <!--pnid:ta5zMXoEdjzQlaVsGiUY0U--><!-- 全息太极：缓慢旋转、横空飘动 -->
+  <div data-page-node-id="2vARk40Kj6kHE7ssQCfyaw" aria-hidden="true" class="holo-taiji">
+    <svg data-page-node-id="WZaelXfVw5TTNwKM2Ow92N" viewBox="0 0 200 200">
+      <circle data-page-node-id="UOkqziii9eCUt2fUP9zyIw" cx="100" cy="100" r="98"/>
+      <path data-page-node-id="7rFcIRx6cgMHrApZaG5nrq" d="M100 2 A98 98 0 0 1 100 198 A49 49 0 0 1 100 100 A49 49 0 0 0 100 2"/>
+      <circle data-page-node-id="7uB8du1VlnGzmisRMjqrYI" class="eye" cx="100" cy="51" r="6"/>
+      <circle data-page-node-id="ji5yjXSwkr19VMONhvMDBW" class="eye" cx="100" cy="149" r="6"/>
+    </svg>
+  </div>
+  <!--pnid:9gOjs9Iv4UACpreAMLID6z--><!-- 全息卦象：乾卦 ☰ -->
+  <div data-page-node-id="6o0zDJt2Y70jQxe5KiKr8o" aria-hidden="true" class="holo-gua">
+    <svg data-page-node-id="zYVHh1l1RcGyeof9zbQEYN" viewBox="0 0 100 140">
+      <rect data-page-node-id="Q91Eqe9gDiPxSkAwQ5KmEz" height="10" width="70" x="15" y="25"/>
+      <rect data-page-node-id="iY4SS65pZrAOlod7XbxV6O" height="10" width="70" x="15" y="65"/>
+      <rect data-page-node-id="Tgu1DCg6X7u9XtSsXCHQYF" height="10" width="70" x="15" y="105"/>
+    </svg>
+  </div>
+  <!--pnid:cnc1ZKIeQ5agbZE7KSQJPN--><!-- 全息卦象：坤卦 ☷ -->
+  <div data-page-node-id="6FQzH8HwZls6wsUIFKgCCA" aria-hidden="true" class="holo-gua g2">
+    <svg data-page-node-id="KDWE0CifTmEZYVSUBsh1yB" viewBox="0 0 100 140">
+      <rect data-page-node-id="jTlERJFau56zNtDJ6rHcI4" height="10" width="25" x="15" y="25"/><rect data-page-node-id="hPsndO2tijFlifFjzyOF9q" height="10" width="25" x="60" y="25"/>
+      <rect data-page-node-id="z20Fr0POTswVhRkQZk8tD6" height="10" width="25" x="15" y="65"/><rect data-page-node-id="l0MhSsCLuLn0ZqRe5mro0J" height="10" width="25" x="60" y="65"/>
+      <rect data-page-node-id="FCLNVaFX8GuB0zOFXdMppS" height="10" width="25" x="15" y="105"/><rect data-page-node-id="UWLwAu1NzI7deHCdWec75v" height="10" width="25" x="60" y="105"/>
+    </svg>
+  </div>
+</div>
+<div data-page-node-id="5FK4dl8edGAiV2yGbzOvMj" class="scanlines"></div>
+<div data-page-node-id="CBPWbg8lQYMWeSldAZlYUC" class="vignette"></div>
+
+<!--pnid:mSABu8F1mbiMVnNGxDYxds--><!-- 顶部导航 -->
+<header data-page-node-id="CXO5j2hmnJ9MTBhGdMxpbQ" class="topbar">
+  <div data-page-node-id="0oHloEmBZlGprMHYf5Z4eK" class="brand" onclick="App.go('home')">
+    <span data-page-node-id="FwLFRBiVRsg70nbbir2G7s" class="brand-logo"><!--pnid:xrrDXAwini7fNkykaHHtB3-->◈</span>
+    <span data-page-node-id="YM7YHEyBNjPzNPlKuleEoM" class="brand-name" data-text="一卦天机"><!--pnid:pmVAhviIYOFfE8F43oPZDr-->一卦天机</span>
+    <span data-page-node-id="7Ah7oFTbKbrx8shS30wqJD" class="brand-sub"><!--pnid:VHd7tzbUxuLjfb2HFtc0hE-->DIVINE&nbsp;HEXAGRAM</span>
+  </div>
+  <nav data-page-node-id="4u9CdMmHxguxp8pw2RpWj4" class="nav">
+    <a data-page-node-id="towhJmKykJIVwVqTvg7e6T" href="#" onclick="App.go('home');return false"><!--pnid:QYhISzsfy8TKzW6HTOXqDk-->排盘推演</a>
+    <a data-page-node-id="G8BPfR8XIwT2za5VF2S6Tb" href="#" onclick="App.go('tools');return false"><!--pnid:KKuDn2FFyxCk3JKWIkeimp-->免费工具</a>
+    <a data-page-node-id="LwZOIEY3JLnOdpAXk3jTWf" href="#" onclick="App.go('masters');return false"><!--pnid:uTsRaWJg9dagsOZM3j80By-->大师入驻</a>
+    <a data-page-node-id="OYH0RixRJTuXtycEDnRnNY" href="#" onclick="App.go('services');return false"><!--pnid:5Wssk2ZjKHAXhA6boK559W-->服务定价</a>
+    <a data-page-node-id="fcC025SPK5GQeNCpIFnGNB" href="#" onclick="App.go('center');return false"><!--pnid:ZRMXzgPWShAGEbeFRMNtRy-->我的空间</a>
+    <a data-page-node-id="D3t4DftMLrYkYCKjqYHdY6" href="#" onclick="App.go('policy');return false"><!--pnid:YrKW29KQzlP6JSwK7KPdNb-->帮助</a>
+  </nav>
+  <div data-page-node-id="Tbeaj5VZ1yGFSieKTgvtuX" class="auth-area" id="authArea"></div>
+</header>
+
+<!--pnid:K93JOj3n5bxXgQBI2zwGpu--><!-- 视图容器 -->
+<main data-page-node-id="d5kGCQ68y7yWNIgpUsUwZM" id="view"></main>
+
+<!--pnid:4LOi1WZ720wSQnbDs8jrSp--><!-- 登录弹窗 -->
+<div data-page-node-id="b1ovqIvi1vtlxy88uTeKCp" class="modal-mask" id="loginMask">
+  <div data-page-node-id="Zq2VYkLB8CCWVkyqKxTpDQ" class="modal login-modal">
+    <div data-page-node-id="zUl0hu5yaw1iuPIkSecmZD" class="modal-head">
+      <span data-page-node-id="vLNiHqUXDjETtxtyzJdH5F"><!--pnid:VQHKgPtP4HG2ujoXeBTB6h-->登录一卦天机</span>
+      <button data-page-node-id="mTlT41lO8NlEMv7cqqLTSz" class="modal-close" onclick="App.closeLogin()"><!--pnid:CiIVG9KO9lGgtZoPxjuLIq-->✕</button>
+    </div>
+    <div data-page-node-id="LJxxub2cKLm5FnJ8HdvPFl" class="login-tabs">
+      <button data-page-node-id="pKsYeTcMnilam4WqW2CzZx" class="tab active" data-login-tab="phone" onclick="App.switchLoginTab('phone')"><!--pnid:KyPlSgZV4mpga3gi98gokK-->手机号登录</button>
+      <button data-page-node-id="jbwP4SQo8ri5PxDUqHNRta" class="tab" data-login-tab="oauth" onclick="App.switchLoginTab('oauth')"><!--pnid:le5JUoNiCQtEUjgsJF3q4G-->快捷登录</button>
+    </div>
+    <!--pnid:GWoihcQXNxzMxqRVugHy6a--><!-- 手机号 OTP -->
+    <div data-page-node-id="YPAPQeCKKcdpM7RjvAPrjN" id="phoneLoginBox">
+      <div data-page-node-id="CRsU2IVV4l0oyXGzMw4lMs" class="field">
+        <label data-page-node-id="N1BSiSNnzYoxvFnaP4PrVq"><!--pnid:sKKdhf7piAyDKjZGvQmdkH-->手机号</label>
+        <input data-page-node-id="wbdyF8Vcqs1byywB86K35R" autocomplete="tel" id="loginPhone" maxlength="11" placeholder="请输入 11 位手机号" type="tel">
+        <div data-page-node-id="bapFVGHJQwOtCfp7YhVFrq" class="field-error" id="phoneError"></div>
+      </div>
+      <div data-page-node-id="oGwtu2JAiuaBRrnrjQhGaZ" class="field">
+        <label data-page-node-id="fG4d2FZHIKaR9ChKpkYAre"><!--pnid:Adv3FPRv4RgQojA8MnlCJh-->验证码</label>
+        <div data-page-node-id="i5jv8sFTiplsQF1p25Vyup" class="row">
+          <input data-page-node-id="38xtxlQxPycuCB6YWobocA" id="loginCode" maxlength="6" placeholder="请输入验证码" type="text">
+          <button data-page-node-id="m3ngAw4lU5sw2LXR5RwrDZ" class="btn btn-ghost" id="sendCodeBtn" onclick="App.sendLoginCode()" type="button"><!--pnid:wsM0Uw3C9nKgCIX216WDnu-->获取验证码</button>
+        </div>
+      </div>
+      <div data-page-node-id="I9b3Ml7MmZQuf7UKqSbGpT" class="login-error" id="loginError"></div>
+      <button data-page-node-id="Xhy7QHNTCaBorucOLXOUZg" class="btn btn-primary btn-block" onclick="App.submitLoginOtp()" type="button"><!--pnid:t1iBlbjN8aFWQ9IhQmTc4B-->登录 / 注册</button>
+    </div>
+    <!--pnid:I42iWU6SH1Ix9eL4X0ds1x--><!-- OAuth 快捷登录 -->
+    <div data-page-node-id="xVjsYSr6I8UObTmPhG3fwZ" id="oauthLoginBox" style="display:none">
+      <p data-page-node-id="op4ONPFgatjJSdwcbdnJEX" class="login-tip"><!--pnid:2C7rGLo6FCcvMRaaxDlSq8-->使用第三方账号快捷登录，授权后即可同步你的命盘与订单</p>
+      <button data-page-node-id="gzoF0xEquzOmCkTweP3qk8" class="btn btn-wb btn-block" onclick="App.oauthLogin('workbuddy')" type="button"><!--pnid:n82LfOpdIjA8fzapMbDtCW-->使用 WorkBuddy 登录</button>
+      <button data-page-node-id="n589bBLiPpumQaZ4HLkxLU" class="btn btn-wx btn-block" onclick="App.oauthLogin('wechat')" type="button"><!--pnid:7sUht7bKXtRZ8VSwQObW7L-->微信扫码登录</button>
+      <div data-page-node-id="gXXIx3Iwc5jRrOtHq7r0b6" class="login-error" id="oauthError"></div>
+    </div>
+  </div>
+</div>
+
+<!--pnid:UEbsWmzO2DtNJVvnDLbffp--><!-- 购买弹窗 -->
+<div data-page-node-id="LTYazvXsScWBai1qQ6TabQ" class="modal-mask" id="buyMask">
+  <div data-page-node-id="tVeEpqUGqUHMwIKKOGH1TM" class="modal buy-modal">
+    <div data-page-node-id="KqSlmYepmzY4dgBqTCLdCo" class="modal-head">
+      <span data-page-node-id="39ZCY8jLosEUQqi1xeFC1K" id="buyTitle"><!--pnid:lZ9iXbl8CvRM9xpibbS3CC-->选择服务</span>
+      <button data-page-node-id="KLsthungUls5hrdpOUMARJ" class="modal-close" onclick="App.closeBuy()"><!--pnid:vZrrRnPDseLypxOlT4PSTF-->✕</button>
+    </div>
+    <div data-page-node-id="I1mEVXDH1dOO83VvmXm8G2" id="buyBody"></div>
+  </div>
+</div>
+
+<!--pnid:4DY6aygeqXTUzED6x3uEKs--><!-- 轻提示 -->
+<div data-page-node-id="1XL672G0gr9bB2yNDqJgT2" class="toast" id="toast"></div>
+
+<!--pnid:TstXNeBdO40SnDtdhf51AI--><!-- 云服务 SDK（CDN） -->
+<script data-page-node-id="uJZB2VxbO5A9Ird7EGNGlw" src="https://cdn.jsdelivr.net/npm/@tencent-ai/workbuddy-cloud-sdk@dev/lib/index.global.js"></script>
+<!--pnid:BNXbVUWmBSOa5x5RGFN2Kq--><!-- 排盘引擎：lunar-javascript -->
+<script data-page-node-id="UKZNQ2Tn6KdHNtpxb6JYfo" src="https://cdn.jsdelivr.net/npm/lunar-javascript@1.6.0/lunar.js"></script>
+<script data-page-node-id="QEz34siMyi3n3Xe3CofXqx" src="js/cyber-bg.js?v=4"></script>
+<script data-page-node-id="F0GaYleK2hoMo6cWSp8njo" src="js/engine.js?v=4"></script>
+<script data-page-node-id="sU8QOq0dYU95nKwalMC9xJ" src="js/app.js?v=4"></script>
+</body>
+</html>
